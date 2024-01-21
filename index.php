@@ -24,3 +24,16 @@ if (!defined('__TYPECHO_ROOT_DIR__') && !@include_once 'config.inc.php') {
 
 /** 注册一个结束插件 */
 \Typecho\Plugin::factory('index.php')->end();
+
+<?php
+$file= __DIR__ . '/..'.$_SERVER["PHP_SELF"];
+
+if(file_exists($file))
+{
+   return false;
+}
+else
+{
+    require_once __DIR__ . '/../index.php';
+}
+#echo $_SERVER["PHP_SELF"];
